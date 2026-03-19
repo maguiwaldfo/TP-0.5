@@ -39,10 +39,6 @@ class Program
                 case 0:
                     Console.WriteLine("Saliendo");
                     break;
-
-                default:
-                    Console.WriteLine("Opcion invalida");
-                    break;
             }
         }
     }
