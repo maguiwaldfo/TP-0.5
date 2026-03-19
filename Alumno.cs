@@ -4,14 +4,25 @@ namespace TP0_5
     {
         public int Dni ; 
         public string Nombre ;
-        public int CantidadDeFaltas;
+        public double CantidadDeFaltas;
 
-        public Alumno(int dni, string nombre, int cantidadDeFaltas)
-        {
-            Dni = dni;
-            Nombre = nombre;
-            CantidadDeFaltas = cantidadDeFaltas;
-        }
-        
+    public Alumno(int dni, string nombre)
+    {
+        DNI = dni;
+        Nombre = nombre;
+        CantidadFaltas = 0;
+    }
+
+    public void AgregarFalta(double falta)
+    {
+        CantidadFaltas = CantidadFaltas + falta;
+    }
+
+    public void Mostrar()
+    {
+        Console.WriteLine("DNI: " + DNI + " Nombre: " + Nombre + " Faltas: " + CantidadFaltas);
     }
 }
+
+        
+    
