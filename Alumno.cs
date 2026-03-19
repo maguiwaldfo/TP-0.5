@@ -1,28 +1,26 @@
-namespace TP0_5
-{
-    public class Alumno
-    {
-        public int Dni ; 
-        public string Nombre ;
-        public double cantidadDeFaltas;
+using System;
 
-    public alumno(int dni, string nombre)
+public class Alumno
+{
+    public int DNI;
+    public string Nombre;
+    public double CantidadFaltas;
+
+    public Alumno(int dni, string nombre)
     {
         DNI = dni;
         Nombre = nombre;
-        cantidadFaltas = 0;
+        CantidadFaltas = 0;
     }
 
-    public void agregarFalta(double falta)
+    public void AgregarFalta(double falta)
     {
         CantidadFaltas = CantidadFaltas + falta;
     }
 
-    public void mostrar()
+    public void Mostrar()
     {
-        Console.WriteLine("DNI: " + DNI + " Nombre: " + Nombre + " Faltas: " + cantidadFaltas);
+        Console.WriteLine("DNI: " + DNI + " Nombre: " + Nombre + " Faltas: " + CantidadFaltas);
     }
 }
-
-        
     
