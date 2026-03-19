@@ -7,12 +7,12 @@ namespace TP0_5
         public List<Alumno> Alumnos = new List<Alumno>();
     }
     
-    public void AgregarAlumno(Alumno alumno)
+    public void agregarAlumno(Alumno alumno)
     {
         alumnos.Add(alumno);
     }
 
-    public Alumno BuscarporDNI(int dni)
+    public Alumno buscarporDNI(int dni)
     {
         int i = 0;
 
@@ -22,7 +22,7 @@ namespace TP0_5
             {
                 return alumnos[i];
             }
-            i = i + 1;
+            i++;
         }
 
         return null;
@@ -35,7 +35,7 @@ namespace TP0_5
         while (i < alumnos.Count)
         {
             alumnos[i].mostrar();
-            i = i + 1;
+            i++;
         }
     }
 
@@ -45,11 +45,11 @@ namespace TP0_5
 
         while (i < alumnos.Count)
         {
-            if (alumnos[i].CantidadFaltas > 15)
+            if (alumnos[i].cantidadFaltas > 15)
             {
                 alumnos[i].mostrar();
             }
-            i = i + 1;
+            i++;
         }
     }
 }
