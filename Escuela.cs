@@ -1,18 +1,18 @@
+
+
+using System;
 using System.Collections.Generic;
 
-namespace TP0_5
+public class Escuela
 {
-    public class Escuela
-    {
-        public List<Alumno> Alumnos = new List<Alumno>();
-    }
-    
-    public void agregarAlumno(Alumno alumno)
+    public List<Alumno> alumnos = new List<Alumno>();
+
+    public void AgregarAlumno(Alumno alumno)
     {
         alumnos.Add(alumno);
     }
 
-    public Alumno buscarporDNI(int dni)
+    public Alumno BuscarPorDNI(int dni)
     {
         int i = 0;
 
@@ -28,32 +28,30 @@ namespace TP0_5
         return null;
     }
 
-    public void mostrarTodos()
+    public void MostrarTodos()
     {
         int i = 0;
 
         while (i < alumnos.Count)
         {
-            alumnos[i].mostrar();
+            alumnos[i].Mostrar();
             i++;
         }
     }
 
-    public void mostrarLibres()
+    public void MostrarLibres()
     {
         int i = 0;
 
         while (i < alumnos.Count)
         {
-            if (alumnos[i].cantidadFaltas > 15)
+            if (alumnos[i].CantidadFaltas > 15)
             {
-                alumnos[i].mostrar();
+                alumnos[i].Mostrar();
             }
             i++;
         }
     }
 }
-
-
 
 
