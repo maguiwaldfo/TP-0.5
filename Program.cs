@@ -11,7 +11,7 @@ class Program
         {
             MostrarMenu();
 
-            Console.Write("Opcion: ");
+            Console.WriteLine("Opcion: ");
             opcion = int.Parse(Console.ReadLine());
 
             switch (opcion)
@@ -55,10 +55,10 @@ class Program
 
     static void AgregarAlumno(Escuela curso)
     {
-        Console.Write("DNI: ");
+        Console.WriteLine("DNI: ");
         int dni = int.Parse(Console.ReadLine());
 
-        Console.Write("Nombre: ");
+        Console.WriteLine("Nombre: ");
         string nombre = Console.ReadLine();
 
         Alumno alumno = new Alumno(dni, nombre);
@@ -67,7 +67,7 @@ class Program
 
     static void BuscarAlumno(Escuela curso)
     {
-        Console.Write("DNI: ");
+        Console.WriteLine("DNI: ");
         int dni = int.Parse(Console.ReadLine());
 
         Alumno alumno = curso.BuscarPorDNI(dni);
@@ -80,14 +80,14 @@ class Program
 
     static void AgregarFalta(Escuela curso)
     {
-        Console.Write("DNI: ");
+        Console.WriteLine("DNI: ");
         int dni = int.Parse(Console.ReadLine());
 
         Alumno alumno = curso.BuscarPorDNI(dni);
 
         if (alumno != null)
         {
-            Console.Write("Falta (1 o 0.5): ");
+            Console.WriteLine("Falta (1 o 0.5): ");
             double falta = double.Parse(Console.ReadLine());
 
             alumno.AgregarFalta(falta);
