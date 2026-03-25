@@ -5,52 +5,48 @@ using System;
 
 public class Escuela
 {
-    public List<Alumno> alumnos = new List<Alumno>();
+    Dictionary<int , Alumno> alumnos = new Dictionary <int , Alumno>(); 
 
-    public void AgregarAlumno(Alumno alumno)
+    public void AgregarAlumno(Alumno alumno , int dni)
     {
-        alumnos.Add(alumno);
-    }
-
-    public Alumno BuscarPorDNI(int dni)
-    {
-        int i = 0;
-
-        while (i < alumnos.Count)
+        bool esta = alumnos.ContainsKey(dni); 
+        if (esta == false)
         {
-            if (alumnos[i].DNI == dni)
-            {
-                return alumnos[i];
-            }
-            i++;
+        alumnos.Add(alumno);
+        }
+        else {
+            Console.WriteLine("Ya hay un alumno con ese dni")
         }
 
-        return null;
     }
+
+    public void MostrarAlumno ( int dni)
+    {
+        Console.WriteLine(alumnos[dni].Mostrar());
+    }
+
 
     public void MostrarTodos()
     {
-        int i = 0;
-
-        while (i < alumnos.Count)
-        {
-            alumnos[i].Mostrar();
-            i++;
+        foreach (int clave in alumnos.Keys){
+        Console.WriteLine(alumnos[clave].Mostrar()); 
         }
     }
 
     public void MostrarLibres()
     {
-        int i = 0;
-
-        while (i < alumnos.Count)
+        foreach (int clave in alumnos.Keys)
         {
-            if (alumnos[i].CantidadFaltas > 15)
+            if (alumnos[clave].getFaltas > 15)
             {
-                alumnos[i].Mostrar();
+                alumnos[clave].Mostrar();
             }
-            i++;
         }
+    }
+
+    public void CargarFalta ( int dni , double falta)
+    {
+        alumnos[dni].AgregarFalta(falta); 
     }
 }
 

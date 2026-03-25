@@ -62,39 +62,21 @@ class Program
         string nombre = Console.ReadLine();
 
         Alumno alumno = new Alumno(dni, nombre);
-        curso.AgregarAlumno(alumno);
+        curso.AgregarAlumno(alumno , dni);
     }
 
     static void BuscarAlumno(Escuela curso)
     {
         Console.WriteLine("DNI: ");
         int dni = int.Parse(Console.ReadLine());
-
-        Alumno alumno = curso.BuscarPorDNI(dni);
-
-        if (alumno != null)
-            alumno.Mostrar();
-        else
-            Console.WriteLine("No existe");
+        curso.MostrarAlumno(dni);
     }
 
     static void AgregarFalta(Escuela curso)
     {
         Console.WriteLine("DNI: ");
         int dni = int.Parse(Console.ReadLine());
-
-        Alumno alumno = curso.BuscarPorDNI(dni);
-
-        if (alumno != null)
-        {
-            Console.WriteLine("Falta (1 o 0.5): ");
-            double falta = double.Parse(Console.ReadLine());
-
-            alumno.AgregarFalta(falta);
-        }
-        else
-        {
-            Console.WriteLine("No existe");
-        }
+        Console.WriteLine("Ingresa cuanto falto");
+        double falta= double.Parse(Console.ReadLine());
+        curso.CargarFalta(dni , falta);
     }
-}
