@@ -61,8 +61,8 @@ class Program
         Console.WriteLine("Nombre: ");
         string nombre = Console.ReadLine();
 
-        Alumno alumno = new Alumno(dni, nombre);
-        curso.AgregarAlumno(alumno , dni);
+        Alumno alumno1 = new Alumno(nombre , 0);
+        curso.AgregarAlumno(alumno1 , dni);
     }
 
     static void BuscarAlumno(Escuela curso)
@@ -80,3 +80,4 @@ class Program
         double falta= double.Parse(Console.ReadLine());
         curso.CargarFalta(dni , falta);
     }
+}

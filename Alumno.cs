@@ -7,8 +7,8 @@ public class Alumno
 
     public Alumno(string nombre , double CantidadFaltas)
     {
-        Nombre = nombre;
-        CantidadFaltas = 0;
+        this.Nombre = nombre;
+        this.CantidadFaltas = 0;
     }
 
     public void AgregarFalta(double falta)
@@ -18,7 +18,7 @@ public class Alumno
 
     public string Mostrar()
     {
-        string x = ("DNI: " + DNI + " Nombre: " + Nombre + " Faltas: " + CantidadFaltas);
+        string x = (" Nombre: " + this.Nombre + " Faltas: " + this.CantidadFaltas);
         return x;
     }
 

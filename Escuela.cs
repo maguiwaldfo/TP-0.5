@@ -7,15 +7,20 @@ public class Escuela
 {
     Dictionary<int , Alumno> alumnos = new Dictionary <int , Alumno>(); 
 
+    public Escuela ()
+    {
+        alumnos = new Dictionary <int , Alumno>();
+    }
+
     public void AgregarAlumno(Alumno alumno , int dni)
     {
         bool esta = alumnos.ContainsKey(dni); 
         if (esta == false)
         {
-        alumnos.Add(alumno);
+        alumnos.Add(dni , alumno);
         }
         else {
-            Console.WriteLine("Ya hay un alumno con ese dni")
+            Console.WriteLine("Ya hay un alumno con ese dni");
         }
 
     }
@@ -37,7 +42,7 @@ public class Escuela
     {
         foreach (int clave in alumnos.Keys)
         {
-            if (alumnos[clave].getFaltas > 15)
+            if (alumnos[clave].getFaltas() > 15)
             {
                 alumnos[clave].Mostrar();
             }
